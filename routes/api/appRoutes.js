@@ -76,7 +76,8 @@ router.post("/", (req, res) => {
     appName: req.body.appName,
     appDescription: req.body.appDescription,
     logoFileID: req.file.id,
-    suggestedBy: req.body.suggestedBy
+    authorName: req.body.authorName,
+    authorID: req.body.authorID
   });
   console.log("saving to db", newApp);
   newApp.save().then(app => res.json(app));
