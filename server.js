@@ -10,6 +10,7 @@ const multer = require("multer");
 //const upload = multer({ storage: multer.memoryStorage() });
 const GridFsStorage = require("multer-gridfs-storage");
 const Grid = require("gridfs-stream");
+const cors = require("cors");
 
 const app = express();
 
@@ -18,6 +19,8 @@ const appRoutes = require("./routes/api/appRoutes");
 const userRoutes = require("./routes/api/userRoutes");
 const authRoutes = require("./routes/api/authRoutes");
 //app.use(bodyParser.json());
+app.use(cors());
+
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(
   bodyParser.urlencoded({
