@@ -57,7 +57,8 @@ router.get("/", (req, res) => {
       console.log("found ...");
       console.log(apps);
       res.json(apps);
-    });
+    })
+    .catch(err => console.log(err));
 });
 
 // @ route POST api/app
