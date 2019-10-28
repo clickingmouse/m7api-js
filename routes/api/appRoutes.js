@@ -50,10 +50,12 @@ const App = require("../../models/apps");
 // @ desc get all apps
 // @ access Public
 router.get("/", (req, res) => {
-  console.log('got a api/app request')
+  console.log("got a api/app request");
   App.find()
     .sort({ date: -1 })
     .then(apps => {
+      console.log("found ...");
+      console.log(apps);
       res.json(apps);
     });
 });
