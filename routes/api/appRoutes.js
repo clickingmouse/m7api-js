@@ -12,8 +12,8 @@ var mongo = require("mongodb");
 const GridFsStorage = require("multer-gridfs-storage");
 const Grid = require("gridfs-stream");
 
-const atlasDB = process.env.ATLAS_URI;
-console.log(atlasDB);
+// const atlasDB = process.env.ATLAS_URI;
+// console.log(atlasDB);
 
 // const upload = multer({ dest: "uploads/" });
 //const upload = multer({ storage: multer.memoryStorage() });
@@ -50,6 +50,7 @@ const App = require("../../models/apps");
 // @ desc get all apps
 // @ access Public
 router.get("/", (req, res) => {
+  console.log('got a api/app request')
   App.find()
     .sort({ date: -1 })
     .then(apps => {
@@ -67,10 +68,10 @@ router.post("/", (req, res) => {
   // const data = JSON.parse(req.body);
   // console.log(data);
   const formData = req.body;
-  console.log(req.file);
-  console.log("------------------>", req.body);
-  console.log("---------1--------->", req.body.appName);
-  console.log("---------2--------->", req.file.id);
+  // console.log(req.file);
+  // console.log("------------------>", req.body);
+  // console.log("---------1--------->", req.body.appName);
+  // console.log("---------2--------->", req.file.id);
 
   const newApp = new App({
     appName: req.body.appName,
