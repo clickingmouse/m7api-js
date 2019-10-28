@@ -19,7 +19,8 @@ const appRoutes = require("./routes/api/appRoutes");
 const userRoutes = require("./routes/api/userRoutes");
 const authRoutes = require("./routes/api/authRoutes");
 //app.use(bodyParser.json());
-//app.use(cors());
+
+app.use(cors());
 
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(
